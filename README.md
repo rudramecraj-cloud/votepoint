@@ -1,8 +1,6 @@
 # VotePoint – Digital Voting Portal
 
-VotePoint is a web-based digital voting application built with **Python, Flask, and SQLite**. It was developed for the 2026 school election at **SBOA Public (Sr. Sec.) School, South Chittoor**.
-
-The portal lets eligible voters enter a unique voting key, select one candidate in each election category, and submit their ballot. Administrators can view vote totals and leading candidates in a dashboard and export the recorded results to an Excel workbook.
+VotePoint is a web-based digital voting application built with **Python, Flask, and SQLite** that lets eligible voters enter a unique voting key, select one candidate in each election category, and submit their ballot. Administrators can view vote totals and leading candidates in a dashboard and export the recorded results to an Excel workbook.
 
 **Live deployment:** [VotePoint – Digital Voting Portal](https://digital-voting-portal.onrender.com/voting)
 
