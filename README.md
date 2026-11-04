@@ -4,7 +4,7 @@ VotePoint is a web-based digital voting application built with **Python, Flask, 
 
 The portal lets eligible voters enter a unique voting key, select one candidate in each election category, and submit their ballot. Administrators can view vote totals and leading candidates in a dashboard and export the recorded results to an Excel workbook.
 
-**Live deployment:** [VotePoint – Digital Voting Portal](https://digital-voting-portal.onrender.com/start)
+**Live deployment:** [VotePoint – Digital Voting Portal](https://digital-voting-portal.onrender.com/voting)
 
 > The application’s voting flow begins at `/voting` (or `/`). The `/start` endpoint accepts a POST request containing a voting key; opening that endpoint directly in a browser may not display the voting form.
 
