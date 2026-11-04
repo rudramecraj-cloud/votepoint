@@ -4,6 +4,7 @@ from openpyxl import Workbook
 from collections import defaultdict
 import sqlite3
 import os
+from dotenv import load_dotenv
 
 CATEGORIES = {
     "PRESIDENT": ["Emma", "Charlotte"],
@@ -11,10 +12,25 @@ CATEGORIES = {
     "SECRETARY": ["Abigail", "Ethan", "Ruby"],
     "EXECUTIVE": ["Daniel", "Lucas"]
 }
-app = Flask(__name__)
-app.secret_key = "Election_7xK29QpLm"
+load_dotenv()
 
-ADMIN_PASSWORD = "Election2026"
+app = Flask(__name__)
+
+app.secret_key = os.environ.get("SECRET_KEY")
+
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
+
+if not app.secret_key:
+    raise RuntimeError("SECRET_KEY environment variable is missing")
+
+if not ADMIN_PASSWORD:
+    raise RuntimeError("ADMIN_PASSWORD environment variable is missing")
+
+app.config.update(
+    SESSION_COOKIE_HTTPONLY=True,
+    SESSION_COOKIE_SAMESITE="Lax",
+    SESSION_COOKIE_SECURE=os.environ.get("COOKIE_SECURE", "true").lower() == "true"
+)
 
 @app.route("/debug-db")
 def debug_db():
